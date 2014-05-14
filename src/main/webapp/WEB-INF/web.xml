@@ -1,0 +1,55 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+	<display-name>Archetype Created Web Application</display-name>
+	<filter>
+		<filter-name>WebShareSessionJboss51Filter</filter-name>
+		<filter-class>com.embracesource.infinispan.sesssion.filter.WebShareSessionJboss51Filter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>WebShareSessionJboss51Filter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<servlet>
+		<servlet-name>loginServlet</servlet-name>
+		<servlet-class>com.embracesource.infinispan.sesssion.LoginServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>exitServlet</servlet-name>
+		<servlet-class>com.embracesource.infinispan.sesssion.ExitServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>saveMessage</servlet-name>
+		<servlet-class>com.embracesource.infinispan.sesssion.SaveMessage</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>removeMessage</servlet-name>
+		<servlet-class>com.embracesource.infinispan.sesssion.RemoveMessage</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>loginServlet</servlet-name>
+		<url-pattern>/login</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>exitServlet</servlet-name>
+		<url-pattern>/exit</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>saveMessage</servlet-name>
+		<url-pattern>/save</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>removeMessage</servlet-name>
+		<url-pattern>/remove</url-pattern>
+	</servlet-mapping>
+	<session-config>
+		<session-timeout>10</session-timeout>
+	</session-config>
+
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+</web-app>
