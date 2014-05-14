@@ -2,3 +2,4 @@ WebSessionPlugin
 ================
 
 WebSessionPlugin
+add contributor
